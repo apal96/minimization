@@ -22,9 +22,10 @@ def minimizeFunc(eqtn):
     print("Minimum value of the function:", min_value)
     return min_x[0], min_value
 print("Absolute Value")
-absV,ignoreVal = minimizeFunc(absFunction)
+absV,minAbs = minimizeFunc(absFunction)
 print("Sum of Squares")
-sumS,ignoreVal2 = minimizeFunc(sumOfSquares)
-diff = absV-sumS
+sumS,minSum = minimizeFunc(sumOfSquares)
+diff = minAbs-minSum
+percentChange = (diff/minSum) *100
 print(f'Difference: {diff}')
-print(f'% Change: {round(((diff)/sumS)*100,2)}')
+print(f'% Change: {round(percentChange,2)}')
