@@ -1,5 +1,4 @@
 import numpy as np
-import matplotlib.pyplot as plt
 from scipy.optimize import minimize
 
 def absFunction(x):
@@ -23,6 +22,9 @@ def minimizeFunc(eqtn):
     print("Minimum value of the function:", min_value)
     return min_x[0], min_value
 print("Absolute Value")
-minimizeFunc(absFunction)
+absV,ignoreVal = minimizeFunc(absFunction)
 print("Sum of Squares")
-minimizeFunc(sumOfSquares)
+sumS,ignoreVal2 = minimizeFunc(sumOfSquares)
+diff = absV-sumS
+print(f'Difference: {diff}')
+print(f'% Change: {round(((diff)/sumS)*100,2)}')
